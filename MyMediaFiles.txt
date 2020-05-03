@@ -1,2 +1,1 @@
-Video{copyRight='kanenas', fileName='po.wmv', description='popo', creator='papa', size=14.0}
-Audio{copyRight='piou', fileName='popo.mp3', description='popo', creator='asd', size=15.0}
+dfas.mp3,sadf,asrg,12.0

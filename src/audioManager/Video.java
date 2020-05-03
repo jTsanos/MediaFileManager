@@ -2,7 +2,7 @@ package audioManager;
 
 public class Video extends MediaFile {
     String copyRight;
-
+    public static final String TYPE = "Video";
     public Video(String fileName, String description, String creator, float size, String copyRight) {
         super(fileName, description, creator, size);
         this.copyRight = copyRight;

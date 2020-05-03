@@ -37,10 +37,9 @@ public class Ui {
                 "5.Total MediaFiles \n" +
                 "6.save MediaFiles\n" +
                 "7.Save Audios \n" +
-                "8.Load MediaFiles \n" +
-                "9.Load Audio.txt \n" +
-                "10.search MediaList  by name\n" +
-                "11 Sart menu \n" +
+                "8.Load Audio.txt \n" +
+                "9.search MediaList  by name\n" +
+                "10 Sart menu \n" +
                 "0.Exit");
 
         int choice;
@@ -55,12 +54,12 @@ public class Ui {
                 case 3: return Choice.DISPLAY_FILELIST;
                 case 4: return Choice.CLEAR_FILELIST;
                 case 5: return Choice.TOTAL_MEDIAFILES;
-                case 6: return Choice.SAVE;
+                case 6: return Choice.SAVE_FILESLIST;
                 case 7: return Choice.SAVE_AUDIO;
-                case 8: return Choice.LOAD_FILELIST;
-                case 9: return Choice.LOAD_AUDIO;
-                case 10:return Choice.SEARCH;
-                case 11:return Choice.START_MENU;
+//                case 8: return Choice.LOAD_FILESLIST;
+                case 8: return Choice.LOAD_AUDIO;
+                case 9:return Choice.SEARCH;
+                case 10:return Choice.START_MENU;
                 case 0: return Choice.EXIT;
                 default: return Choice.ERROR;
             }
@@ -112,10 +111,9 @@ public Audio createAudio(){
                 "5.Total MediaFiles\n" +
                 "6.save MediaFiles \n" +
                 "7.Save Videos\n" +
-                "8.Load MediaFiles \n" +
-                "9.Load Video.txt \n" +
-                "10.Search mediaList by name\n" +
-                "11 for start menu\n" +
+                "8.Load Video.txt \n" +
+                "9.Search mediaList by name\n" +
+                "10 for start menu\n" +
                 " 0.Exit");
 
 
@@ -132,12 +130,12 @@ public Audio createAudio(){
                 case 3: return Choice.DISPLAY_FILELIST;
                 case 4: return Choice.CLEAR_FILELIST;
                 case 5: return Choice.TOTAL_MEDIAFILES;
-                case 6: return Choice.SAVE;
+                case 6: return Choice.SAVE_FILESLIST;
                 case 7: return Choice.SAVE_VIDEO;
-                case 8: return Choice.LOAD_FILELIST;
-                case 9 :return Choice.LOAD_VIDEO;
-                case 10:return Choice.SEARCH;
-                case 11:return Choice.START_MENU;
+//                case 8: return Choice.LOAD_FILESLIST;
+                case 8 :return Choice.LOAD_VIDEO;
+                case 9:return Choice.SEARCH;
+                case 10:return Choice.START_MENU;
                 case 0: return Choice.EXIT;
                 default: return Choice.ERROR;
             }
@@ -189,7 +187,7 @@ public Audio createAudio(){
                 choice = menuForAudio();
                 switch (choice) {
                     case ADD_AUDIO:
-                        MediaFile audioFile = createAudio();
+                        Audio audioFile = createAudio();
                         myMediaFile.addFile(audioFile);
                         myMediaFile.addAudioFile(audioFile);
                         break;
@@ -208,15 +206,16 @@ public Audio createAudio(){
                         break;
                     case TOTAL_MEDIAFILES:
                         System.out.println(myMediaFile.getTotalFiles());
-                    case SAVE:
+                    case SAVE_FILESLIST:
                         myMediaFile.saveFileList("MyMediaFiles.txt");
                         break;
                     case SAVE_AUDIO:
                     myMediaFile.saveFileListAudio("Audio.txt");
                     break;
-                    case LOAD_FILELIST:
-                        myMediaFile.loadFileList("MyMediaFiles.txt");
-                        break;
+//                    case LOAD_FILESLIST:
+//                        myMediaFile.loadFileList("MyMediaFiles.txt");
+//                        myMediaFile.displayFileList();
+//                        break;
                     case LOAD_AUDIO:
                        myMediaFile.loadFileListAudio("Audio.txt");
                         myMediaFile.getAudioFileList();
@@ -226,7 +225,7 @@ public Audio createAudio(){
                         System.out.println("BAΛΕ ΝΑΜΕ ARXEIOY");
                         Scanner scannerTwo = new Scanner(System.in);
                         nameForSearch = scannerTwo.next();
-                       myMediaFile.searchByName(nameForSearch);
+                        System.out.println(myMediaFile.searchByName(nameForSearch));
                         break;
                     case START_MENU:
                         manageMediaFileList(myMediaFile);
@@ -243,7 +242,7 @@ public Audio createAudio(){
                 choice = menuForVideo();
                 switch (choice) {
                     case ADD_VIDEO:
-                        MediaFile videoFile = createVideo();
+                        Video videoFile = createVideo();
                         myMediaFile.addFile(videoFile);
                         myMediaFile.addVideoFile(videoFile);
                         break;
@@ -263,15 +262,15 @@ public Audio createAudio(){
                     case TOTAL_MEDIAFILES:
                         System.out.println(myMediaFile.getTotalFiles());
                         manageMediaFileList(myMediaFile);
-                    case SAVE:
+                    case SAVE_FILESLIST:
                         myMediaFile.saveFileList("MyMediaFiles.txt");
                         break;
                     case SAVE_VIDEO:
                         myMediaFile.saveFileListVideo("Videos.txt");
                         break;
-                    case LOAD_FILELIST:
-                        myMediaFile.loadFileList("MyMediaFiles.txt");
-                        break;
+//                    case LOAD_FILESLIST:
+//                        myMediaFile.loadFileList("MyMediaFiles.txt");
+//                        break;
                     case LOAD_VIDEO:
                         myMediaFile.loadFileListVideo("Videos.txt");
                         myMediaFile.getVideoFileList();
@@ -297,5 +296,4 @@ public Audio createAudio(){
 
 
     }
-
 }

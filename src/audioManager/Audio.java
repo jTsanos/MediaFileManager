@@ -2,7 +2,7 @@ package audioManager;
 
 public class Audio extends MediaFile {
     String copyRight;
-
+public static final String TYPE = "Audio";
 
     public Audio(String fileName, String description, String creator, float size, String copyRight) {
         super(fileName, description, creator, size);
@@ -20,11 +20,11 @@ public class Audio extends MediaFile {
     @Override
     public String toString() {
         return "Audio{" +
-                "copyRight='" + copyRight + '\'' +
                 ", fileName='" + fileName + '\'' +
                 ", description='" + description + '\'' +
                 ", creator='" + creator + '\'' +
-                ", size=" + size +
+                ", size=" + size + '\'' +
+                ", copyRight='" + copyRight +
                 '}';
     }
 }
