@@ -1,0 +1,24 @@
+package audioManager;
+
+public enum Choice {
+    EXIT,
+    ADD_AUDIO,
+    REMOVE_AUDIO,
+    DISPLAY_FILELIST,
+    CLEAR_FILELIST,
+    TOTAL_MEDIAFILES,
+    SAVE,
+    SAVE_AUDIO,
+    SAVE_VIDEO,
+    LOAD_FILELIST,
+    LOAD_VIDEO,
+    LOAD_AUDIO,
+    ADD_VIDEO,
+    REMOVE_VIDEO,
+    AUDIOFILE,
+    VIDEOFILE,
+    SEARCH,
+    START_MENU,
+    ERROR;
+}
+
